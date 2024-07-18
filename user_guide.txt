@@ -1,0 +1,4 @@
+conda activate pytorch_env
+>> conda install -c conda-forge opencv matplotlib
+>> conda list opencv
+>> conda list matplotlib
