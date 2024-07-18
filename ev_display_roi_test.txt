@@ -1,0 +1,20 @@
+PS C:\Users\Conda\source\repos\cuda_example1> $env:Path -split ';'
+C:\WINDOWS\system32
+C:\WINDOWS
+C:\WINDOWS\System32\Wbem
+C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+C:\WINDOWS\System32\OpenSSH\
+C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR
+C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+C:\Program Files\Microsoft SQL Server\150\Tools\Binn\
+C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\
+C:\Program Files\dotnet\
+C:\Program Files (x86)\Incredibuild
+C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\
+C:\Program Files\Git\cmd
+C:\Users\Conda\anaconda3
+C:\Users\Conda\AppData\Local\Microsoft\WindowsApps
+C:\Users\Conda\.dotnet\tools
+C:\Users\Conda\AppData\Local\Programs\Microsoft VS Code\bin
+C:\Users\Conda\Anaconda3\Scripts
+C:\Users\Conda\Anaconda3\Library\bin

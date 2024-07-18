@@ -1,0 +1,30 @@
+winver
+python --version
+conda --version
+
+# package
+conda remove pytorch
+conda clean --all
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+# env
+conda create --name pytorch_env python=3.12
+conda activate pytorch_env
+conda env list 
+conda info --envs
+
+# useful dev ops
+$env:Path -split ';'
+.\python --version
+& "C:\Users\Conda\anaconda3\condabin\conda.bat" init powershell
+notepad $PROFILE
+& "C:\Users\Conda\Anaconda3\Scripts\conda.exe" "shell.powershell" "hook" | Out-String | Invoke-Expression
+conda install -c conda-forge opencv matplotlib
+
+# worthless but interesting dev ops
+Invoke-Expression (& conda 'shell.powershell' 'hook')
+conda init powershell
+& "C:\Users\Conda\anaconda3\condabin\conda.bat" --version
+
+#scratch
+conda env export > environment.yml
