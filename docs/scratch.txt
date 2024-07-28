@@ -1,3 +1,10 @@
+# cuda available
+nvidia-smi
+echo $CUDA_VISIBLE_DEVICES
+export CUDA_VISIBLE_DEVICES=0,1  # Make GPUs 0 and 1 visible
+visible_gpus=$(echo $CUDA_VISIBLE_DEVICES)
+
+#old
 winver
 python --version
 conda --version
@@ -21,7 +28,7 @@ notepad $PROFILE
 & "C:\Users\Conda\Anaconda3\Scripts\conda.exe" "shell.powershell" "hook" | Out-String | Invoke-Expression
 conda install -c conda-forge opencv matplotlib
 
-# worthless but interesting dev ops
+# interesting dev ops
 Invoke-Expression (& conda 'shell.powershell' 'hook')
 conda init powershell
 & "C:\Users\Conda\anaconda3\condabin\conda.bat" --version

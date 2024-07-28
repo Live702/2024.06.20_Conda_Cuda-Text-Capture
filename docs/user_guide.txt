@@ -1,0 +1,27 @@
+key: >> means do this if you havent done it yet, else skip
+
+#test display roi
+>> conda create --name my_env_1 python=3.12
+conda activate my_env_1
+>> conda install -c conda-forge opencv matplotlib
+>> conda list opencv
+>> conda list matplotlib
+>> # or
+>> conda env update -f env(test_display_roi).yaml --prune
+python scripts/tests/test_display_roi.py
+# shows roi example
+
+#test cuda
+>> conda uninstall pytorch torchvision #todo - required?
+>> conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+>> # or
+set CUDA_VISIBLE_DEVICES=0
+>> conda env update -f env(test_cuda).yaml --prune
+>> conda list torch
+python .\scripts\tests\test_cuda.py
+
+nvidia-smi
+nvcc --version
+echo $CUDA_VISIBLE_DEVICES
+export CUDA_VISIBLE_DEVICES=0,1  # Make GPUs 0 and 1 visible
+visible_gpus=$(echo $CUDA_VISIBLE_DEVICES)

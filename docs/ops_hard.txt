@@ -1,0 +1,12 @@
+//////////////////////////////////////////////////////////////////////////////////////////
+24.07.23.2020 win ver 21H2
+24.07.18.1716 found docs here via bookmark https://pytorch.org/get-started/locally/
+24.07.18.1618 Issues with gpt command not able to find cuda package, similar issue to pip.
+web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
+pakcage alignment. SDK? #Sup1
+--
+#Sup1
+cuda channel
+gpu driver
+wepsite with toggles
+check bookmarks

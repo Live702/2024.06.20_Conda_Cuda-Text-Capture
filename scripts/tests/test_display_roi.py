@@ -1,3 +1,4 @@
+#import opencv
 import cv2
 import matplotlib.pyplot as plt
 
@@ -8,4 +9,4 @@ roi = img[1100:1400, 40:800]
 
 plt.imshow(roi, cmap='gray')
 plt.title('Grayscale and Thresholded ROI')
-plt.show()
+plt.show() 
