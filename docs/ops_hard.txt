@@ -1,10 +1,18 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.07.29.1317 test [] fx, ocr
+24.07.28.1357 cuda, cv2 fx > data capture > multi frame data capture < speed and gpu use
+verification Sup2, update readme
 24.07.23.2020 win ver 21H2
 24.07.18.1716 found docs here via bookmark https://pytorch.org/get-started/locally/
 24.07.18.1618 Issues with gpt command not able to find cuda package, similar issue to pip.
 web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
 pakcage alignment. SDK? #Sup1
 --
+#Sup2
+data capture to []
+multi frame to []
+speed
+
 #Sup1
 cuda channel
 gpu driver

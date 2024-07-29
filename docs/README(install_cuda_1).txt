@@ -38,27 +38,31 @@ cd C:\Users\{your user here}\Anaconda3\; .\_conda --version
 #initilize conda for powershell
 & "C:\Users\{your user here}\anaconda3\condabin\conda.bat" init powershell
 
-#set up conda PROFILE, run
+# set up conda PROFILE, run
 notepad $PROFILE
 #create the file, add this string and save
 & "C:\Users\{your user here}\Anaconda3\Scripts\conda.exe" "shell.powershell" "hook" | Out-String | Invoke-Expression
 
-#set up and activate conda enviroment
-conda create --name pytorch_env2 python=3.12
-conda activate pytorch_env
-conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
-
-
-???
-conda create --name pytorch_env2 python=3.12
-conda activate pytorch_env
+# set up a cuda enabled enviroment
+conda create -n myEnv python=3.12
+conda activate myEnv
+conda install -c conda-forge opencv
+conda install anaconda::matplotlib
 conda install cuda -c nvidia
 conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
 
+?
+conda env update -n test_opencv -f 'env(test_cuda_display_roi).yaml'
 
-???
-conda create -n myEnv python=3.12
-conda activate myEnv
+?
+//conda install -c conda-forge pytesseract
+conda install -c conda-forge easyocr
+
+? set up cuda env fx with ocr
+conda create -n test_cuda_ocr python=3.11
+conda activate test_cuda_ocr
+conda install -c conda-forge easyocr
+
 conda install -c conda-forge opencv
 conda install anaconda::matplotlib
 conda install cuda -c nvidia
