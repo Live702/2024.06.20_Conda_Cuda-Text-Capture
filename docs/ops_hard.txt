@@ -1,4 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.07.29.1453 will print detection, result type? display
 24.07.29.1317 test [] fx, ocr
 24.07.28.1357 cuda, cv2 fx > data capture > multi frame data capture < speed and gpu use
 verification Sup2, update readme
