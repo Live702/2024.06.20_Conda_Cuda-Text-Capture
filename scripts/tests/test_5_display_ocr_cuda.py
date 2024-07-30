@@ -11,7 +11,10 @@ else:
 
 screenshot_path = 'data/Frame_1.png'
 img = cv2.imread(screenshot_path)
-roi = img[1100:1400, 40:800]
+#roi = img[1100:1400, 40:800] #useful roi outlineing health
+height, width, _ = img.shape
+x1,x2,y1,y2 = 0, height, 0, width 
+roi = img[x1:x2, y1:y2]
 
 reader = easyocr.Reader(['en'])
 results = reader.readtext(roi, detail=0)

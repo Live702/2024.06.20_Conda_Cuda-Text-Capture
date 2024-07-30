@@ -1,4 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.07.30.1323 223pm target, frames video? frame stream? Sup3
+24.07.29.1546 displays full screen, ocr's text > next frames / video
 24.07.29.1453 will print detection, result type? display
 24.07.29.1317 test [] fx, ocr
 24.07.28.1357 cuda, cv2 fx > data capture > multi frame data capture < speed and gpu use
@@ -9,6 +11,22 @@ verification Sup2, update readme
 web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
 pakcage alignment. SDK? #Sup1
 --
+#Sup3
+Wow this is a challenging topic, there are so many things to consider!
+Firstly consider our base functionality:
+-Read a single frame for text data using cuda accellerated pytorch
+Single Frame > Multi Frame > Frames from Video > Frame stream
+Bot
+How interact with game?
+How parse enviorment?
+< 3d render from images < 3d enviorment render persistnat
+< game model, game concpets
+How make capture decisons
+> keep player in view > keep teams in view
+> how determine clipping / not clipping 
+
+attack red?
+
 #Sup2
 data capture to []
 multi frame to []
