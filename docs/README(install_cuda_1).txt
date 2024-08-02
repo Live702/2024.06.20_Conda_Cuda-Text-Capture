@@ -76,3 +76,6 @@ conda remove -n test_6_wndcap_ocr
 C:\Users\Conda\Anaconda3\envs\test_6_wndcap_ocr # Im just gonna manually delete it
 # try again
 conda env create -n test_6_wincap_ocr -f '.\env\env_5(test_display_ocr_cuda).yaml'
+
+# isaacsim attempt env
+conda env create -n test_7_isaacsim_detect_red -f '.\env\env(test_6_wincap_ocr).yaml'

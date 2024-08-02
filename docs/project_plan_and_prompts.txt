@@ -1,0 +1,79 @@
+Orginal Vision
+Have a bot that can recive and overwatch code, launch the game on a microservice, capture all metadata relating to a match
+> player positions, velocity and vector
+> ult charge 
+> player hero 
+> kill feed
+    < team focus vector
+    < team centroid
+    < team average distance
+>> sightline, topography, angle, choke 
+    << peek
+>> Player abilty use timestamp, and land
+>> player vision
+    << was killer on screen
+    << who see []
+
+this bot would need to start the game code, fly though the map, make decisons about how to manipulate the camera and catalog that information.
+
+Requirments for this process
+> capture information off screen
+> create a 3d 'world model' to navigate
+> intract with the program (frame stream?)
+> have a compelex set of huristics
+> be fault tollerant in terms of its abilty to recover from bad positions
+
+Possible starting place:
+Frame stream?
+Capturing information from a frame stream will oc be required
+Attack red?
+Having a bot which only knows how to walk towards and attack bots on Reinhardt would be a simple demonstration of frame stream + control actions, and would expose several current knowlege limitations. 
+
+UI parser?
+
+Our next endevor is quite a bit more challenging. We currently have a running gpu accellerated ocr process which captures the txt from the game window and prints to the console. This is very cool but nowhere close to what we ultimatley want. We want a dynamic tool that understand how to move through the game world intelligently. We will start building such a tool in stages. First lets build a bot that knows how to look around to locate enimies in the enviorment, walk toward them and swing the hammer on them. 
+
+We need to start building the theory of mind for this bot. We probably need some kind of 3d repersentation parsed from the window capture to help the bot place itself in its enviorment.
+
+Do not rush of and attempt to write a solution. Provide no code yet. Break down the problem into 2, 3, 4 or 5 pieces, whatever is most appropriate. What are the different parts of a solution for this called? For each part of the solution proivde 3 corrosponding libaries we may choose as well as an advantage and disadvantage for each. 
+
+For example we may create a simple callable action such as CurrentScene.AttackNearestPlayer() and expect the bot to execute. This imples we can create a scene from captured window the bot understands.  
+
+ROS 2 Navigation Stack
+ViSP
+Isaac SDK
+Open3D
+
+We are building a bot that will know how to play the game. We are using pyautogui to capture the game window. We have a huge amount of knowlge about the game and will likely implement most gameplay decision making through huristic logic in python. However, we must be able to path and understand the enviroment. 
+
+It must be real time.
+It will have no depth information, or accelerometer information. 
+
+- We need the ability to map out the enviorment
+- Path through the enviorment
+- Navigate obstcles
+
+Pose tracking and 3d reconstrctions are benifits. For each libaries speak to how it meets these requirments and to why it would be a bad choice. 
+
+ROS 2 Navigation Stack
+ViSP
+Isaac SDK
+Open3D
+
+Restate all of this information exactly, but change only a similar misconcpetion. While the game does provide a 2d game window, it is a fully 3d game. We are to treat the game the same way we would treat a camera feed from a robot. While we have no depth information from the camera other than perspective, we still consider it a fudamentally 3d space. A core goal is 3D reconstrction of the playable area which we will use to evaluate the bots perceptions, awarness and decision making. 
+
+Provide a table with 5 columns
+
+Depth Creation, here speak to the tools this Library affords in the absence of stereo cameras or LiDAR for 2d to 3d scene graph creation. 
+path planning
+obstacle avoidance
+Pose detection
+3d reconstruction
+
+we are on NVIDIA hardware and running cuda acceleration, speak to Isaac SDK sfm immigration. Be implementation focused. Are there any known projects showing this working. The more recent the better.
+
+This is all getting too hypothetical and too goofy. Lets roll the conversation back to somthing basic. Im not sure I want to use sfm since that would clearly make shaking the camara advantagous to the bot. That to me seems to engineer in bad behaviors that will be hard to work around later. lets do somthing ultra ultra simple. 
+
+lets use one of the libaries mentioned to create a 3d repersentation of the bots eviorment, with the only goal being identifying the nearest floor edge. 
+
+How do ROS 2 Navigation Stack and Isaac SDK work without a 3d reconstrction? What does navigation and pathing even mean in the absense of a 3d reconstrction? Does pathing not nessesitate an visulizable understanding of the enviorment? 
