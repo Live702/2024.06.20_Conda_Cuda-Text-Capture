@@ -54,16 +54,25 @@ conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvi
 ?
 conda env update -n test_opencv -f 'env(test_cuda_display_roi).yaml'
 
-?
+#unneeded 
 //conda install -c conda-forge pytesseract
 conda install -c conda-forge easyocr
 
-? set up cuda env fx with ocr
+# set up cuda env fx with ocr, base
 conda create -n test_cuda_ocr python=3.11
 conda activate test_cuda_ocr
 conda install -c conda-forge easyocr
-
+# add
 conda install -c conda-forge opencv
 conda install anaconda::matplotlib
 conda install cuda -c nvidia
 conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+
+# new 
+conda create -n test_6_wndcap_ocr python=3.11
+conda activate test_6_wndcap_ocr
+conda env update -f '.\env\env_5(test_display_ocr_cuda).yaml' # this doesnt work
+conda remove -n test_6_wndcap_ocr
+C:\Users\Conda\Anaconda3\envs\test_6_wndcap_ocr # Im just gonna manually delete it
+# try again
+conda env create -n test_6_wincap_ocr -f '.\env\env_5(test_display_ocr_cuda).yaml'

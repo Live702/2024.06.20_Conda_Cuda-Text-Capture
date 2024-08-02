@@ -1,4 +1,10 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.08.01.0943 test_5_display_ocr_cuda.py fx on test_6_wincap_ocr, next? now 
+test_6_wincap_ocr.py, #Sup5
+24.08.01.0943 delete and renamed test_6_wndcap_ocr >  test_6_wincap_ocr, try,
+conda env create -n test_6_wincap_ocr -f '.\env\env_5(test_display_ocr_cuda).yaml'
+24.07.30.1454 env issues not duplicating not delting > try manual test_display_ocr_cuda
+dir delete > try conda env create -n new_env_name -f env_5(test_display_ocr_cuda).yaml
 24.07.30.1323 223pm target, frames video? frame stream? Sup3
 24.07.29.1546 displays full screen, ocr's text > next frames / video
 24.07.29.1453 will print detection, result type? display
@@ -11,6 +17,17 @@ verification Sup2, update readme
 web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
 pakcage alignment. SDK? #Sup1
 --
+#Sup5
+Todo 
+Generlized module installer? "I noticed that you... install? [y]/n"
+
+#Sup4
+conda activate test_cuda_ocr 
+python .\scripts\tests\test_5_display_ocr_cuda.py works
+how 
+conda env update -f '.\env\env_5(test_display_ocr_cuda).yaml' fail?
+
+
 #Sup3
 Wow this is a challenging topic, there are so many things to consider!
 Firstly consider our base functionality:
