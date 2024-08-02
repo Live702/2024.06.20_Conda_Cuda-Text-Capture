@@ -28,3 +28,5 @@ Frame stream?
 Capturing information from a frame stream will oc be required
 Attack red?
 Having a bot which only knows how to walk towards and attack bots on Reinhardt would be a simple demonstration of frame stream + control actions, and would expose several current knowlege limitations. 
+
+UI parser?
