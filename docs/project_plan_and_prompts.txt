@@ -77,3 +77,33 @@ This is all getting too hypothetical and too goofy. Lets roll the conversation b
 lets use one of the libaries mentioned to create a 3d repersentation of the bots eviorment, with the only goal being identifying the nearest floor edge. 
 
 How do ROS 2 Navigation Stack and Isaac SDK work without a 3d reconstrction? What does navigation and pathing even mean in the absense of a 3d reconstrction? Does pathing not nessesitate an visulizable understanding of the enviorment? 
+
+Qualifying assumptions
+Mouse viewport always return to 
+Mouse movment is closed and determinstic (camera jump)(spawn event)
+
+Isaac Sim Installation: Have you successfully installed Isaac Sim using the instructions provided in the official documentation or through another method? A successful installation should typically make the isaacsim module available.
+
+this is where I am somewhat confused. issac sim is installed through Nvida Omniverse, then added as a item off the exchange. This process is entirely performed though a graphical interface and affords no opperunity to configure the local conda env we need to use to call it (test_7_isaacsim_detect_red). But yes, Omniverse is istalled, yes under the exchange tap isaac sim was installed and opens and runs. But you should KNOW this if you read the insturctions. They deliniate a different type of strategy. 
+
+Conda Environment Creation: Share the commands you used to create and activate the conda environment. You dont need them since you have the full env file specified. But since you insist:
+first verify the version of python used by isaac
+& C:\Users\Conda\AppData\Local\ov\pkg\isaac-sim-2023.1.1\kit\python --version
+3.10.13
+create the env and activate
+conda create -n test_7_isaacsim_detect_red python=3.10.13
+conda activate test_7_isaacsim_detect_red
+install pkg for scrpit
+conda install -c conda-forge opencv
+conda install -c conda-forge numpy
+conda install -c conda-forge 
+
+Isaac Sim Module Installation (if any): If you explicitly tried to install the isaacsim module within the conda environment, provide the commands you used.
+
+IF YOU READ THE INSTRUCTIONS AND SCRIPT provided
+
+you would likely come to a similar conclusion as I have. That it is not a matter of 'installing a package' but instead a matter or referencing said packages correclty. This imples that when the conda/python enviorment is called, it KNOWS TO HOOK THE CORRECT FILES from the corrospoding issac direcotires. 
+
+THIS IS EXPRESSLY OUR TASK. as I stated. YOU MUST READ. 
+
+Pay attention, review my orginal prompt. update your memory. Then we will proceed through the install proccess line by line together. 

@@ -1,4 +1,11 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.08.07.2131 lok > script location > setup_python_env.bat > why not env hook fx
+#sup7 confrims no PYTHONPATH
+conda env add "no py path SET PYTHONPATH=%PYTHONPATH%;%~dp0site" still not work
+C:\Users\Conda\anaconda3\envs\test_7_isaacsim_detect_red\lib\venv\scripts\nt\activate.bat
+24.08.06.1120 messed up by installing in base, just fixed, make conda disallow
+24.08.06.1052 create conda install pack, #Sup6
+24.08.06.0934 isaac sim devops eval raw install, interogated gpt on process, found issac py ver
 24.08.01.0943 test_5_display_ocr_cuda.py fx on test_6_wincap_ocr, next? now 
 test_6_wincap_ocr.py, #Sup5
 24.08.01.0943 delete and renamed test_6_wndcap_ocr >  test_6_wincap_ocr, try,
@@ -17,6 +24,24 @@ verification Sup2, update readme
 web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
 pakcage alignment. SDK? #Sup1
 --
+#Sup7
+import os
+import sys
+path_SystemRoot = os.environ.get('SystemRoot')
+path_Python = os.environ.get('PYTHONPATH')
+if path_SystemRoot:
+    sys.stdout.write(f"SystemRoot : {path_SystemRoot}\n")
+if path_Python:
+    sys.stdout.write(f"PYTHONPATH: {path_Python}\n")
+
+import shutil
+python_exe_path = shutil.which("python")  # Searches the PATH for "python"
+if python_exe_path:
+    sys.stdout.write(f"Python executable path: {python_exe_path}\n")
+
+#Sup6
+conda create -n test_7_isaacsim_detect_red python=3.10.13
+
 #Sup5
 Todo 
 Generlized module installer? "I noticed that you... install? [y]/n"

@@ -27,6 +27,9 @@ $env:Path -split ';'
 notepad $PROFILE
 & "C:\Users\Conda\Anaconda3\Scripts\conda.exe" "shell.powershell" "hook" | Out-String | Invoke-Expression
 conda install -c conda-forge opencv matplotlib
+conda install --revision 0
+python -c "import omni.isaac.core"
+python -c 'import sys; print(sys.executable)'
 
 # interesting dev ops
 Invoke-Expression (& conda 'shell.powershell' 'hook')

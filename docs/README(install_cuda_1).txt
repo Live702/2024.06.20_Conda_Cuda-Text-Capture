@@ -77,5 +77,18 @@ C:\Users\Conda\Anaconda3\envs\test_6_wndcap_ocr # Im just gonna manually delete 
 # try again
 conda env create -n test_6_wincap_ocr -f '.\env\env_5(test_display_ocr_cuda).yaml'
 
-# isaacsim attempt env
-conda env create -n test_7_isaacsim_detect_red -f '.\env\env(test_6_wincap_ocr).yaml'
+# isaacsim env
+# verify isaacsim py version
+& C:\Users\Conda\AppData\Local\ov\pkg\isaac-sim-2023.1.1\kit\python --version
+3.10.13
+conda create -n test_7_isaacsim_detect_red python=3.10.13
+conda activate test_7_isaacsim_detect_red
+conda install -c conda-forge opencv
+conda install -c conda-forge numpy
+conda install -c conda-forge pyautogui
+# fingers crossed
+Python .\scripts\tests\test_7_isaacsim_detect_red.py
+# ????
+conda install -c conda-forge isaacsim
+pip install omni.isaac.kit
+export PYTHONPATH=$PYTHONPATH:/path/to/your/isaac_sim_install/kit/python
