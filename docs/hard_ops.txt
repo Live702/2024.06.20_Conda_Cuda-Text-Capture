@@ -1,7 +1,8 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+
+24.08.10.1433 "width": "1280", 
+24.08.10.1355 seems to work, required pip #sup9
 24.08.10.1138 lok
-need new folder?
-need standalone / pip ?
 24.08.08.1052 pip standalone 
 python3.10 -m venv env_isaacsim source env_isaacsim/bin/activate
 pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
@@ -33,6 +34,14 @@ verification Sup2, update readme
 web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
 pakcage alignment. SDK? #Sup1
 --
+#Sup9
+conda create -n test_8_isaacsim_env python=3.10
+conda activate test_8_isaacsim_env
+pip install --upgrade pip
+pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+pip show isaacsim
+python -c "import isaacsim"
+
 #Sup8
 sim = isaacsim.SimulationApp()
 <<< 

@@ -107,3 +107,57 @@ you would likely come to a similar conclusion as I have. That it is not a matter
 THIS IS EXPRESSLY OUR TASK. as I stated. YOU MUST READ. 
 
 Pay attention, review my orginal prompt. update your memory. Then we will proceed through the install proccess line by line together. 
+
+Consider an attempt to create a local conda enviorment from which we would like to control Onvierse issacsim programtically using python.
+we create a local conda env, test_8_isaacsim_env, by doing the following
+conda create -n test_8_isaacsim_env python=3.10
+conda activate test_8_isaacsim_env
+pip install --upgrade pip
+pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+pip show isaacsim
+
+we know it was successful bc
+(test_8_isaacsim_env) PS C:\Users\Conda\source\repos\cuda_example1> python -c "import isaacsim; print('a print after successful import')"
+a print after successful import
+
+Say "yes" if you are following or ask a question. 
+
+Consider the Test Script .\scripts\tests\, with contents as follows:
+
+from isaacsim import SimulationApp
+config = {
+     width: "1280",
+     height: "720",
+     headless: False,
+}
+simulation_app = SimulationApp(config)
+simulation_app.close()
+
+Consider the return
+Traceback (most recent call last):
+  File "C:\Users\Conda\source\repos\cuda_example1\scripts\tests\test_8_isaacsim_env.py", line 15, in <module>
+    width: "1280",
+NameError: name 'width' is not defined
+
+How can this be?
+
+I resolved this issue by running 
+pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+pip install isaacsim-extscache-physics==4.1.0.0 isaacsim-extscache-kit==4.1.0.0 isaacsim-extscache-kit-sdk==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+
+It now runs the sym but it closes sooner than I would like.
+Please modify the test script, test_8_isaacsim_env.py, with contents:
+
+from isaacsim import SimulationApp
+
+config = {
+    "width": "1280",
+    "height": "720",
+    "headless": False,
+}
+
+simulation_app = SimulationApp(config)
+simulation_app.close()
+
+Such that it asks in the terminal "End simulation: [y]/n"
+and ends the simulation if it recies a console input of y

@@ -92,3 +92,11 @@ Python .\scripts\tests\test_7_isaacsim_detect_red.py
 conda install -c conda-forge isaacsim
 pip install omni.isaac.kit
 export PYTHONPATH=$PYTHONPATH:/path/to/your/isaac_sim_install/kit/python
+
+###
+conda create -n test_8_isaacsim_env python=3.10
+conda activate test_8_isaacsim_env
+pip install --upgrade pip
+pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+pip show isaacsim
+python -c "import isaacsim"
