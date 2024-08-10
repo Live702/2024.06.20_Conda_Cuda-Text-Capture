@@ -1,5 +1,14 @@
 //////////////////////////////////////////////////////////////////////////////////////////
+24.08.10.1138 lok
+need new folder?
+need standalone / pip ?
+24.08.08.1052 pip standalone 
+python3.10 -m venv env_isaacsim source env_isaacsim/bin/activate
+pip install isaacsim==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+pip install isaacsim-extscache-physics==4.1.0.0 isaacsim-extscache-kit==4.1.0.0 isaacsim-extscache-kit-sdk==4.1.0.0 --extra-index-url https://pypi.nvidia.com
+24.08.08.0959 'sim = isaacsim.SimulationApp()' halucinated LLM nonsense? -_-  < #sup8
 24.08.07.2131 lok > script location > setup_python_env.bat > why not env hook fx
+C:\Users\Conda\AppData\Local\ov\pkg\isaac-sim-2023.1.1\kit\site\
 #sup7 confrims no PYTHONPATH
 conda env add "no py path SET PYTHONPATH=%PYTHONPATH%;%~dp0site" still not work
 C:\Users\Conda\anaconda3\envs\test_7_isaacsim_detect_red\lib\venv\scripts\nt\activate.bat
@@ -24,6 +33,24 @@ verification Sup2, update readme
 web resources loc unclear. review python_example_1 for cuda installer tree. Must get cuda
 pakcage alignment. SDK? #Sup1
 --
+#Sup8
+sim = isaacsim.SimulationApp()
+<<< 
+https://docs.omniverse.nvidia.com/py/isaacsim/source/extensions/omni.isaac.kit/docs/index.html
+<<<
+# At top of your application
+from omni.isaac.kit import SimulationApp
+config = {
+     width: "1280",
+     height: "720",
+     headless: False,
+}
+simulation_app = SimulationApp(config)
+
+# Rest of the code follows
+...
+simulation_app.close()
+
 #Sup7
 import os
 import sys

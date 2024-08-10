@@ -1,20 +1,6 @@
 import cv2
 import numpy as np
 import pyautogui
-
-import os
-import sys
-import shutil
-path_SystemRoot = os.environ.get('SystemRoot') if os.environ.get('SystemRoot') is not None else "Cant find value"
-path_Python     = os.environ.get('PYTHONPATH') if os.environ.get('PYTHONPATH') is not None else "Cant find value"
-python_exe_path = shutil.which("python")       if shutil.which("python")       is not None else "Cant find value"
-
-sys.stdout.write(f"SystemRoot :            {path_SystemRoot}\n")
-sys.stdout.write(f"PYTHONPATH:             {path_Python}\n")
-sys.stdout.write(f"Python executable path: {python_exe_path}\n")
-
-
-"""
 import isaacsim  # Assuming you have Isaac Sim installed
 
 # --- Isaac Sim Environment Setup ---
@@ -121,4 +107,3 @@ while True:
 
 # Clean up
 cv2.destroyAllWindows()
-"""
